@@ -1,0 +1,16 @@
+<table>
+    <thead>
+        <tr>
+            <th>Libro</th>
+            <th>Fecha Préstamo</th>
+            <th>Fecha Devolución</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for order in order_list %}
+        {% empty %}
+        <p>No hay órdenes</p>
+        {% endfor %}
+    </tbody>
+</table>

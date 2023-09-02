@@ -1,0 +1,12 @@
+<form action="{% url 'biblioteca:reserve' book.id %}" method="post">
+    {% csrf_token %}
+    <fieldset>
+        <legend>
+            <h1>{{ book.title }}</h1>
+        </legend>
+        <h3>{{ book.author }}</h3>
+        <p>{{ book.description }}</p>
+    </fieldset>
+    <input type="submit" value="Reservar" {% if not book.stock %}disabled{% endif %}>
+
+</form>

@@ -1,0 +1,11 @@
+{% if user.is_authenticated%}
+{% load static %}
+<link rel="stylesheet" href="{% static 'biblioteca/style.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<h1>Biblioteca</h1>
+<h4>Bienvenido, {{user.username}}</h4>
+<p><a href="{% url 'biblioteca:books' %}">Ver libros disponibles</a></p>
+<a href="http://127.0.0.1:8000/accounts/logout/">Logout</a>
+{%else%}
+<p>Please <a href="http://127.0.0.1:8000/accounts/login/">Login</a></p>
+{%endif%}
